@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>巴卡 - 智能化个人资产管理与财务规划平台</title>
+    <meta name="description" content="巴卡 - 您的智能个人财务管理助手。提供多账户资产整合、智能理财建议、收支分析报告及财务健康度评估，帮助您轻松规划未来。">
+    <meta name="keywords" content="巴卡, 个人理财, 资产管理, 财务规划, 智能记账, 资产配置">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-dark: #1e40af;
+            --secondary-color: #64748b;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-light: #64748b;
+            --border-color: #e2e8f0;
+            --success-color: #10b981;
+            --warning-color: #f59e0b;
+            --spacing-unit: 8px;
+            --container-width: 1200px;
+            --header-height: 70px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit) * 2;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .flex-col {
+            flex-direction: column;
+        }
+
+        .items-center {
+            align-items: center;
+        }
+
+        .justify-between {
+            justify-content: space-between;
+        }
+
+        .justify-center {
+            justify-content: center;
+        }
+
+        .gap-4 {
+            gap: var(--spacing-unit) * 4;
+        }
+
+        .gap-8 {
+            gap: var(--spacing-unit) * 8;
+        }
+
+        .grid {
+            display: grid;
+            gap: var(--spacing-unit) * 6;
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .grid-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .grid-4 {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        /* Header */
+        header {
+            height: var(--header-height);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: var(--spacing-unit) * 6;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-light);
+            font-size: 16px;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 15px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            border: 1px solid var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            border-color: var(--primary-dark);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: rgba(37, 99, 235, 0.05);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0 60px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 24px;
+            line-height: 1.2;
+            color: var(--text-main);
+        }
+
+        .hero h1 span {
+            color: var(--primary-color);
+            background: linear-gradient(120deg, rgba(37,99,235,0.1) 0%, rgba(37,99,235,0) 100%);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .stat-item h3 {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .stat-item p {
+            font-size: 14px;
+            color: var(--text-light);
+            margin: 0;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            font-size: 16px;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid var(--border-color);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background-color: rgba(37, 99, 235, 0.1);
+            color: var(--primary-color);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            font-size: 24px;
+        }
+
+        .feature-card h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            font-size: 15px;
+        }
+
+        /* Dashboard Preview */
+        .dashboard-preview {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+
+        .preview-container {
+            background: var(--bg-color);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+        }
+
+        .dashboard-mockup {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            padding: 24px;
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            grid-template-rows: auto 1fr;
+            gap: 24px;
+            height: 500px;
+        }
+
+        .mock-sidebar {
+            grid-row: 1 / -1;
+            border-right: 1px solid var(--border-color);
+            padding-right: 24px;
+        }
+
+        .mock-sidebar-item {
+            height: 12px;
+            background: var(--border-color);
+            border-radius: 6px;
+            margin-bottom: 16px;
+            width: 80%;
+        }
+
+        .mock-sidebar-item.active {
+            background: var(--primary-color);
+            width: 60%;
+        }
+
+        .mock-content {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .mock-header {
+            height: 40px;
+            background: var(--border-color);
+            border-radius: 8px;
+            width: 40%;
+        }
+
+        .mock-chart {
+            height: 200px;
+            background: linear-gradient(180deg, rgba(37,99,235,0.05) 0%, rgba(37,99,235,0) 100%);
+            border-radius: 12px;
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            padding: 0 20px 20px;
+        }
+
+        .mock-bar {
+            width: 15%;
+            background: var(--primary-color);
+            border-radius: 4px 4px 0 0;
+            opacity: 0.7;
+        }
+
+        .mock-bar:nth-child(2) { height: 60%; }
+        .mock-bar:nth-child(3) { height: 80%; }
+        .mock-bar:nth-child(4) { height: 45%; }
+        .mock-bar:nth-child(5) { height: 90%; }
+        .mock-bar:nth-child(6) { height: 70%; }
+
+        .mock-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .mock-card {
+            height: 80px;
+            background: var(--bg-color);
+            border-radius: 8px;
+            padding: 12px;
+        }
+
+        /* How it Works */
+        .steps {
+            padding: 80px 0;
+        }
+
+        .step-item {
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            margin: 0 auto 20px;
+        }
+
+        .step-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            width: 100%;
+            height: 2px;
+            background: var(--border-color);
+            z-index: 0;
+        }
+
+        .step-item:last-child::after {
+            display: none;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 18px;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .cta-btn {
+            background: white;
+            color: var(--primary-color);
+            padding: 14px 40px;
+            font-size: 18px;
+            font-weight: 700;
+            border-radius: 8px;
+        }
+
+        .cta-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Footer */
+        footer {
+            background: white;
+            border-top: 1px solid var(--border-color);
+            padding: 60px 0 30px;
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand p {
+            margin-top: 16px;
+            max-width: 300px;
+        }
+
+        .footer-col h4 {
+            color: var(--text-main);
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border-color);
+            padding-top: 30px;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .grid-4 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero-stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .grid-2, .grid-3 {
+                grid-template-columns: 1fr;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .dashboard-mockup {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto auto 1fr;
+                height: auto;
+            }
+
+            .mock-sidebar {
+                border-right: none;
+                border-bottom: 1px solid var(--border-color);
+                padding-right: 0;
+                padding-bottom: 20px;
+                display: flex;
+                gap: 20px;
+            }
+
+            .mock-sidebar-item {
+                width: 12px;
+                height: 60px;
+                margin-bottom: 0;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="2" width="20" height="20" rx="6" fill="#2563EB"/>
+                    <path d="M7 12L10 15L17 8" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>巴卡</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#features">功能介绍</a></li>
+                    <li><a href="#how-it-works">使用指南</a></li>
+                    <li><a href="#pricing">价格方案</a></li>
+                </ul>
+            </nav>
+            <div class="flex items-center gap-4">
+                <a href="#" class="btn btn-outline">登录</a>
+                <a href="#" class="btn btn-primary">免费注册</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>让财富管理 <br><span>简单而智能</span></h1>
+                <p>巴卡是一款专为现代个人和家庭设计的智能资产管理工具。自动同步银行账户，智能分类支出，助您轻松实现财务自由。</p>
+                <div class="flex justify-center gap-4">
+                    <a href="#" class="btn btn-primary">立即开始免费使用</a>
+                    <a href="#" class="btn btn-outline">观看演示视频</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <h3>50万+</h3>
+                        <p>活跃用户</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>1000+</h3>
+                        <p>银行/支付平台</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>99.9%</h3>
+                        <p>数据安全保障</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <div class="container">
+                <div class="section-header">
+                    <h2>巴卡核心功能</h2>
+                    <p>全方位的财务管家，从记录到规划，一站式解决</p>
+                </div>
+                <div class="grid grid-3">
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg>
+                        </div>
+                        <h3>智能资产聚合</h3>
+                        <p>支持对接主流银行、支付宝、微信及理财平台，自动抓取账单，一键整合所有资产，打破信息孤岛。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                            </svg>
+                        </div>
+                        <h3>AI 智能分析</h3>
+                        <p>基于大数据分析您的消费习惯，生成可视化报表，识别隐形支出，并提供个性化的省钱建议。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            </svg>
+                        </div>
+                        <h3>目标理财规划</h3>
+                        <p>设定储蓄目标（如购房、旅游），巴卡将自动计算每月需存金额，并追踪进度，让梦想触手可及。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="dashboard-preview">
+            <div class="container">
+                <div class="section-header">
+                    <h2>清晰直观的仪表盘</h2>
+                    <p>掌控全局，一目了然</p>
+                </div>
+                <div class="preview-container">
+                    <div class="dashboard-mockup">
+                        <div class="mock-sidebar">
+                            <div class="mock-sidebar-item active"></div>
+                            <div class="mock-sidebar-item"></div>
+                            <div class="mock-sidebar-item"></div>
+                            <div class="mock-sidebar-item"></div>
+                        </div>
+                        <div class="mock-content">
+                            <div class="mock-header"></div>
+                            <div class="mock-chart">
+                                <div class="mock-bar"></div>
+                                <div class="mock-bar"></div>
+                                <div class="mock-bar"></div>
+                                <div class="mock-bar"></div>
+                                <div class="mock-bar"></div>
+                                <div class="mock-bar"></div>
+                            </div>
+                            <div class="mock-list">
+                                <div class="mock-card"></div>
+                                <div class="mock-card"></div>
+                                <div class="mock-card"></div>
+                                <div class="mock-card"></div>
+                                <div class="mock-card"></div>
+                                <div class="mock-card"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="how-it-works" class="steps">
+            <div class="container">
+                <div class="section-header">
+                    <h2>如何开始使用巴卡</h2>
+                    <p>只需三步，开启您的智慧理财之旅</p>
+                </div>
+                <div class="grid grid-3">
+                    <div class="step-item">
+                        <div class="step-number">1</div>
+                        <h3>注册账户</h3>
+                        <p style="color: var(--text-light); margin-top: 10px;">使用手机号或邮箱快速注册，支持微信一键登录。</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">2</div>
+                        <h3>绑定账户</h3>
+                        <p style="color: var(--text-light); margin-top: 10px;">安全授权绑定您的银行及支付账户，数据加密传输。</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">3</div>
+                        <h3>开始规划</h3>
+                        <p style="color: var(--text-light); margin-top: 10px;">系统自动生成月度报表，设定目标，开始积累财富。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <h2>准备好掌控您的财务了吗？</h2>
+                <p>加入巴卡，与数百万用户一起迈向财务自由</p>
+                <a href="#" class="btn cta-btn">免费注册使用</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="2" y="2" width="20" height="20" rx="6" fill="#2563EB"/>
+                            <path d="M7 12L10 15L17 8" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>巴卡</span>
+                    </a>
+                    <p>巴卡致力于通过技术创新，让每个人都拥有简单、透明、高效的个人财务管理体验。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>产品</h4>
+                    <ul>
+                        <li><a href="#">功能总览</a></li>
+                        <li><a href="#">价格方案</a></li>
+                        <li><a href="#">更新日志</a></li>
+                        <li><a href="#">下载客户端</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>支持</h4>
+                    <ul>
+                        <li><a href="#">帮助中心</a></li>
+                        <li><a href="#">安全说明</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">联系客服</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关于</h4>
+                    <ul>
+                        <li><a href="#">关于我们</a></li>
+                        <li><a href="#">加入我们</a></li>
+                        <li><a href="#">媒体报道</a></li>
+                        <li><a href="#">服务条款</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 巴卡科技. 保留所有权利.</p>
+                <div class="flex gap-4">
+                    <span>微信公众号</span>
+                    <span>新浪微博</span>
+                    <span>知乎专栏</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+                              </html>
