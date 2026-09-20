@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="厕所里的花子 (Hanako-san) 是日本著名的都市传说与恐怖故事，本文深入解析花子娘娘的传说起源、不同版本的故事细节、相关影视作品推荐以及相关文化影响。">
+    <meta name="keywords" content="厕所里的花子,花子娘娘,都市传说,恐怖故事,日本传说,Hanako-san">
+    <title>厕所里的花子-日本著名都市传说解析与故事指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --bg-color: #0f0f13;
+            --card-bg: #1a1a20;
+            --text-main: #e0e0e0;
+            --text-muted: #a0a0a0;
+            --accent-red: #8a2be2;
+            --accent-pink: #ff3366;
+            --border-color: #33333d;
+            --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(15, 15, 19, 0.95);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-pink);
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-pink);
+        }
+
+        .cta-btn {
+            padding: 8px 20px;
+            background: linear-gradient(45deg, var(--accent-pink), var(--accent-red));
+            color: white;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .cta-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            padding: 80px 0;
+            text-align: center;
+            overflow: hidden;
+            background: radial-gradient(circle at center, rgba(138, 43, 226, 0.15) 0%, var(--bg-color) 70%);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, #fff, #b0b0b0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        /* Status Cards */
+        .status-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .status-card {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .status-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent-pink);
+            margin-bottom: 5px;
+        }
+
+        .status-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Main Content */
+        main {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 40px;
+            border-left: 4px solid var(--accent-pink);
+            padding-left: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border-color);
+            margin-left: 20px;
+        }
+
+        /* Story Section */
+        .story-content {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            font-size: 1.05rem;
+            margin-bottom: 60px;
+        }
+
+        .story-content h2 {
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .story-content p {
+            margin-bottom: 20px;
+            color: #d0d0d0;
+        }
+
+        .story-content blockquote {
+            border-left: 3px solid var(--accent-red);
+            padding-left: 20px;
+            margin: 20px 0;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        /* Timeline / Variants */
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+            margin: 40px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border-color);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -34px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            background: var(--accent-pink);
+            border-radius: 50%;
+            border: 2px solid var(--bg-color);
+        }
+
+        .timeline-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .timeline-item p {
+            color: var(--text-muted);
+        }
+
+        /* Media Grid */
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .media-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease;
+        }
+
+        .media-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-pink);
+        }
+
+        .media-img-placeholder {
+            width: 100%;
+            height: 180px;
+            background-color: #25252e;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #555;
+            font-size: 3rem;
+            position: relative;
+        }
+
+        .media-img-placeholder::after {
+            content: '👻';
+            font-size: 4rem;
+            opacity: 0.8;
+        }
+
+        .media-info {
+            padding: 20px;
+        }
+
+        .media-info h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .media-info p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+        }
+
+        .media-tag {
+            display: inline-block;
+            padding: 4px 10px;
+            background: rgba(138, 43, 226, 0.1);
+            color: var(--accent-red);
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+        /* FAQ */
+        .faq-item {
+            background: var(--card-bg);
+            margin-bottom: 15px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        .faq-question:hover {
+            color: var(--accent-pink);
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--text-muted);
+            display: none;
+            border-top: 1px solid var(--border-color);
+            padding-top: 15px;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '−';
+            font-size: 1.5rem;
+        }
+
+        .faq-item.active .faq-question::before {
+            content: '+';
+            font-size: 1.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #08080a;
+            padding: 50px 0 20px;
+            border-top: 1px solid var(--border-color);
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-pink);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #1f1f25;
+            color: #555;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                display: none; /* Mobile menu simplified */
+            }
+
+            .header-inner {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">Hanako<span>San</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#story" class="active">传说起源</a></li>
+                    <li><a href="#variants">不同版本</a></li>
+                    <li><a href="#media">影视作品</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+            <a href="#story" class="cta-btn">阅读故事</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>厕所里的花子</h1>
+            <p>探索日本最著名的都市传说之一，关于三楼厕所、神秘的敲击声与红色头发的少女。</p>
+            
+            <div class="status-grid">
+                <div class="status-card">
+                    <div class="status-value">1970s</div>
+                    <div class="status-label">起源时期</div>
+                </div>
+                <div class="status-card">
+                    <div class="status-value">Global</div>
+                    <div class="status-label">传播范围</div>
+                </div>
+                <div class="status-card">
+                    <div class="status-value">Horror</div>
+                    <div class="status-label">类型标签</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Story Section -->
+        <section id="story" class="story-content">
+            <h2>基本传说：花子娘娘是谁？</h2>
+            <p><strong>厕所里的花子</strong>（Hanako-san）是日本流传甚广的都市传说。故事通常发生在学校的旧校舍或女厕所内。传说中，每当夜幕降临，学生们若在特定的时间（通常是午夜12点）进入三楼女厕所的第3号隔间，就会听到隔间内传来敲击声。</p>
+            <p>学生们会问：“有人吗？”隔间里会传出微弱的声音：“有。”接着学生们会问：“你是谁？”回答通常是：“我是花子。”</p>
+            <blockquote>“如果你不想死的话，就别回答我。”——这是许多故事版本中花子最后的警告。</blockquote>
+            <p>然而，好奇心作祟的学生往往不听劝告，继续追问：“你为什么在这里？”这时，花子会从隔间门下的缝隙中伸出一只苍白的手，将询问者拉入黑暗之中。</p>
+
+            <h2>花子的身世背景</h2>
+            <p>关于花子的身世，流传着多种版本的解释。最常见的版本是，花子原本是一个住在旧校舍的学生，因为某种原因不幸夭折（有时被描述为被霸凌致死或意外坠楼）。她的灵魂无法离开，被困在了她生前经常去的那间厕所里。</p>
+            <p>传说中，花子通常被描述为一个留着红色长发的少女，身穿水手服。虽然她看起来可怕，但在某些版本中，她有时也会被描述为一种寻求同伴的孤独存在。</p>
+        </section>
+
+        <!-- Variants Section -->
+        <section id="variants">
+            <h2 class="section-title">都市传说的演变</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>1970年代：起源与流行</h3>
+                    <p>花子的传说最初在日本小学和中学的学生群体中流传。当时日本正处于经济高速增长期，学校建设迅速，许多旧校舍被废弃或改建，这为都市传说的产生提供了肥沃的土壤。花子成为了那一代人共同的童年阴影。</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>1980年代：动画与漫画的影响</h3>
+                    <p>随着动画和漫画产业的发展，花子的形象开始被固定化。她标志性的红色短发和水手服形象深入人心，并开始出现在各类恐怖小说和漫画作品中，从单纯的校园怪谈扩展到了更广泛的恐怖文化领域。</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>现代：全球传播与游戏化</h3>
+                    <p>互联网时代让花子的传说跨越了国界。在欧美、东南亚等地，都有关于“厕所里的花子”的变体故事。此外，这一传说也经常被用作游戏或恐怖电影的灵感来源，甚至衍生出了专门的解谜游戏和恐怖体验活动。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Media Section -->
+        <section id="media">
+            <h2 class="section-title">相关影视与作品</h2>
+            <div class="media-grid">
+                <article class="media-card">
+                    <div class="media-img-placeholder"></div>
+                    <div class="media-info">
+                        <h3>《花子来了》</h3>
+                        <p>改编自同名漫画的动画剧集，以单元剧形式讲述了花子的各种传说故事。</p>
+                        <span class="media-tag">动画</span>
+                    </div>
+                </article>
+                <article class="media-card">
+                    <div class="media-img-placeholder"></div>
+                    <div class="media-info">
+                        <h3>《午夜凶铃》相关</h3>
+                        <p>作为日本恐怖文化的代表，花子的传说常被提及，与贞子等传说并列。</p>
+                        <span class="media-tag">电影</span>
+                    </div>
+                </article>
+                <article class="media-card">
+                    <div class="media-img-placeholder"></div>
+                    <div class="media-info">
+                        <h3>《地狱老师》</h3>
+                        <p>经典动漫，其中涉及了花子娘娘这一角色，将其从单纯的恐怖形象转化为带有救赎色彩的传说。</p>
+                        <span class="media-tag">动漫</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq">
+            <h2 class="section-title">常见问题 (FAQ)</h2>
+            <div class="faq-item">
+                <div class="faq-question">花子娘娘真的存在吗？</div>
+                <div class="faq-answer">花子娘娘是典型的都市传说。目前没有任何科学证据证明她的存在，这更多是日本社会文化、校园环境以及集体潜意识共同作用下的产物。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">所有学校的厕所里都有花子吗？</div>
+                <div class="faq-answer">不是。花子的传说主要与旧校舍或特定废弃的学校有关。在现代化、维护良好的学校里，这一传说并不常见。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">花子是恶灵吗？</div>
+                <div class="faq-answer">这取决于故事的版本。在纯粹的恐怖故事中，她是可怕的恶灵；但在某些带有治愈色彩的版本（如《地狱老师》）中，她可能只是一个被困的灵体，需要被帮助才能解脱。</div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于传说</h4>
+                    <ul>
+                        <li><a href="#">传说起源</a></li>
+                        <li><a href="#">版本解析</a></li>
+                        <li><a href="#">文化影响</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>相关资源</h4>
+                    <ul>
+                        <li><a href="#">恐怖小说推荐</a></li>
+                        <li><a href="#">动漫指南</a></li>
+                        <li><a href="#">校园怪谈合集</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>安全提示</h4>
+                    <ul>
+                        <li><a href="#">避免深夜独处</a></li>
+                        <li><a href="#">尊重民间传说</a></li>
+                        <li><a href="#">心理健康指南</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 厕所里的花子 - 传说解析与资料库. 本站仅用于科普与文化传播，不包含任何恐怖诱导内容。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple FAQ Accordion Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // Close other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
