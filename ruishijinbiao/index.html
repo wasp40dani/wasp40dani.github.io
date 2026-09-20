@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="瑞士金表官方门户，提供顶级瑞士机械表与奢华金表选购指南、品牌鉴赏、机芯解析及售后服务信息。">
+    <meta name="keywords" content="瑞士金表, 豪华腕表, 瑞士机械表, 顶级腕表, 奢侈品手表, 机械表保养">
+    <title>瑞士金表-顶级奢华腕表鉴赏与选购指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-gold: #C5A059;
+            --primary-gold-dark: #A67D3C;
+            --bg-dark: #121212;
+            --bg-card: #1E1E1E;
+            --text-main: #E0E0E0;
+            --text-muted: #A0A0A0;
+            --accent-red: #8B0000;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-gold);
+            margin: 1rem auto 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: var(--primary-gold);
+            color: #000;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-gold-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid var(--primary-gold);
+            color: var(--primary-gold);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-gold);
+            color: #000;
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(18, 18, 18, 0.95);
+            border-bottom: 1px solid #333;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-gold);
+            letter-spacing: 3px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-weight: normal;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-size: 0.95rem;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-gold);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary-gold);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 80vh;
+            min-height: 500px;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), var(--bg-dark)), 
+                        url('https://picsum.photos/seed/swisswatchhero/1920/1080') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+
+        .hero h1 span {
+            color: var(--primary-gold);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #ddd;
+            margin-bottom: 2.5rem;
+        }
+
+        /* Features Grid */
+        .features {
+            padding: 5rem 0;
+            background-color: var(--bg-dark);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background-color: var(--bg-card);
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid #333;
+            transition: border-color 0.3s ease;
+        }
+
+        .feature-card:hover {
+            border-color: var(--primary-gold);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            color: var(--primary-gold);
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Collection Showcase */
+        .collection {
+            padding: 5rem 0;
+            background-color: #161616;
+        }
+
+        .collection-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .watch-card {
+            background-color: var(--bg-card);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .watch-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .watch-image-wrapper {
+            position: relative;
+            padding-top: 120%; /* Aspect ratio */
+            overflow: hidden;
+        }
+
+        .watch-image-wrapper img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease;
+        }
+
+        .watch-card:hover .watch-image-wrapper img {
+            transform: scale(1.1);
+        }
+
+        .watch-info {
+            padding: 1.5rem;
+        }
+
+        .watch-brand {
+            color: var(--primary-gold);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .watch-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .watch-specs {
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #333;
+        }
+
+        .watch-price {
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        .tag {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: var(--accent-red);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        /* Guide Section */
+        .guide {
+            padding: 5rem 0;
+            background-color: var(--bg-dark);
+        }
+
+        .guide-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 4rem;
+        }
+
+        .guide-content h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-gold);
+        }
+
+        .guide-content p {
+            margin-bottom: 1.5rem;
+            color: var(--text-muted);
+        }
+
+        .guide-list {
+            margin-bottom: 2rem;
+        }
+
+        .guide-list li {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--text-muted);
+        }
+
+        .guide-list li::before {
+            content: '•';
+            color: var(--primary-gold);
+            position: absolute;
+            left: 0;
+            font-size: 1.5rem;
+            line-height: 0;
+        }
+
+        .sidebar-box {
+            background-color: var(--bg-card);
+            padding: 2rem;
+            border-left: 4px solid var(--primary-gold);
+        }
+
+        .sidebar-box h3 {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .sidebar-box ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .sidebar-box a {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .sidebar-box a:hover {
+            color: var(--primary-gold);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0a0a0a;
+            padding: 4rem 0 2rem;
+            border-top: 1px solid #222;
+            margin-top: 4rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-gold);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #222;
+            color: #555;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-wrapper {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.85rem;
+            }
+
+            .guide-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .header-actions {
+                display: none;
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                SWISS GOLD <span>LUXURY TIMEPIECE</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#collection">经典系列</a></li>
+                    <li><a href="#guide">选购指南</a></li>
+                    <li><a href="#service">售后保养</a></li>
+                    <li><a href="#about">关于品牌</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.8rem;">会员登录</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>传承百年工艺<br><span>定义永恒奢华</span></h1>
+                <p>探索源自瑞士的顶级金表系列，精湛机械技术与奢华金饰艺术的完美融合，见证您的非凡时刻。</p>
+                <a href="#collection" class="btn">浏览经典系列</a>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="container">
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">⚙️</div>
+                        <h3>瑞士原装机芯</h3>
+                        <p>每一枚腕表均搭载瑞士官方认证机芯，历经严苛测试，确保精准与耐用。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">✨</div>
+                        <h3>纯金奢华材质</h3>
+                        <p>精选18K实心金材质，辅以钻石镶嵌，尽显尊贵与恒久价值。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💎</div>
+                        <h3>顶级工艺打磨</h3>
+                        <p>由经验丰富的制表大师手工打磨，表盘纹路细腻，光泽历久弥新。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🛡️</div>
+                        <h3>全球联保服务</h3>
+                        <p>提供完善的全球联保体系与专属售后维修服务，无忧佩戴。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Collection Section -->
+        <section id="collection" class="collection">
+            <div class="container">
+                <h2 class="section-title">年度臻选系列</h2>
+                <div class="collection-grid">
+                    <!-- Product 1 -->
+                    <article class="watch-card">
+                        <span class="tag">热销</span>
+                        <div class="watch-image-wrapper">
+                            <img src="https://picsum.photos/seed/watch1/400/500" alt="皇家黄金系列腕表">
+                        </div>
+                        <div class="watch-info">
+                            <span class="watch-brand">Royal Gold</span>
+                            <h3 class="watch-title">皇家黄金系列 18K金自动机械表</h3>
+                            <div class="watch-specs">
+                                <span>机芯：Cal.8900</span>
+                                <span>防水：100米</span>
+                            </div>
+                            <div class="watch-price">¥ 128,000</div>
+                        </div>
+                    </article>
+
+                    <!-- Product 2 -->
+                    <article class="watch-card">
+                        <div class="watch-image-wrapper">
+                            <img src="https://picsum.photos/seed/watch2/400/500" alt="星空金表">
+                        </div>
+                        <div class="watch-info">
+                            <span class="watch-brand">Stellaris</span>
+                            <h3 class="watch-title">Stellaris 星空金钻腕表</h3>
+                            <div class="watch-specs">
+                                <span>机芯：Cal.9900</span>
+                                <span>宝石：48颗</span>
+                            </div>
+                            <div class="watch-price">¥ 256,000</div>
+                        </div>
+                    </article>
+
+                    <!-- Product 3 -->
+                    <article class="watch-card">
+                        <span class="tag">限量</span>
+                        <div class="watch-image-wrapper">
+                            <img src="https://picsum.photos/seed/watch3/400/500" alt="传承系列腕表">
+                        </div>
+                        <div class="watch-info">
+                            <span class="watch-brand">Heritage</span>
+                            <h3 class="watch-title">传承系列复古金表</h3>
+                            <div class="watch-specs">
+                                <span>机芯：手动上链</span>
+                                <span>材质：18K玫瑰金</span>
+                            </div>
+                            <div class="watch-price">¥ 189,000</div>
+                        </div>
+                    </article>
+
+                    <!-- Product 4 -->
+                    <article class="watch-card">
+                        <div class="watch-image-wrapper">
+                            <img src="https://picsum.photos/seed/watch4/400/500" alt="运动金表">
+                        </div>
+                        <div class="watch-info">
+                            <span class="watch-brand">Sport Gold</span>
+                            <h3 class="watch-title">Sport Gold 跑表</h3>
+                            <div class="watch-specs">
+                                <span>机芯：自动计时</span>
+                                <span>防水：200米</span>
+                            </div>
+                            <div class="watch-price">¥ 95,000</div>
+                        </div>
+                    </article>
+                </div>
+                <div style="text-align: center; margin-top: 3rem;">
+                    <a href="#" class="btn btn-outline">查看全部系列</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guide Section -->
+        <section id="guide" class="guide">
+            <div class="container">
+                <h2 class="section-title">选购与鉴赏指南</h2>
+                <div class="guide-container">
+                    <div class="guide-content">
+                        <h2>如何挑选一枚正宗瑞士金表？</h2>
+                        <p>瑞士金表不仅是时间的记录者，更是身份与品味的象征。在选购时，除了外观的奢华感，更应关注其内在价值。</p>
+                        
+                        <h3>1. 机芯认证</h3>
+                        <p>真正的瑞士金表通常搭载经过瑞士官方天文台（COSC）认证的机芯。这意味着该腕表在经过严格的温度和位置测试后，误差仍在极小范围内。购买前可查看机芯底盖上的“Swiss Made”标志。</p>
+                        
+                        <h3>2. 材质纯度</h3>
+                        <p>市面上常见的金表材质有18K金（含金量75%）、18K玫瑰金等。金表的价值很大程度上取决于黄金的重量和纯度。建议购买时索取材质证书。</p>
+
+                        <h3>3. 品牌历史与工艺</h3>
+                        <p>拥有百年历史的制表品牌往往在齿轮打磨、表盘工艺上拥有独门绝技。了解品牌的制表传统有助于判断其收藏价值。</p>
+
+                        <ul class="guide-list">
+                            <li>检查表冠和表耳是否有抛光痕迹</li>
+                            <li>确认表镜是否为蓝宝石水晶</li>
+                            <li>测试指针与表盘的间隙是否均匀</li>
+                        </ul>
+                    </div>
+
+                    <aside>
+                        <div class="sidebar-box">
+                            <h3>热门品牌</h3>
+                            <ul>
+                                <li><a href="#">百达翡丽</a></li>
+                                <li><a href="#">爱彼</a></li>
+                                <li><a href="#">江诗丹顿</a></li>
+                                <li><a href="#">劳力士</a></li>
+                                <li><a href="#">万国表</a></li>
+                            </ul>
+                            <h3 style="margin-top: 2rem;">保养常识</h3>
+                            <ul>
+                                <li><a href="#">金表清洗指南</a></li>
+                                <li><a href="#">防水性能维护</a></li>
+                                <li><a href="#">机芯油泥更换</a></li>
+                            </ul>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section style="background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://picsum.photos/seed/goldtexture/1200/400') center/cover; padding: 5rem 0; text-align: center;">
+            <div class="container">
+                <h2 style="font-size: 2.5rem; margin-bottom: 1rem; color: #fff;">开启您的奢华之旅</h2>
+                <p style="color: #ccc; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">专业顾问一对一服务，为您推荐最符合您气质的瑞士金表。</p>
+                <button class="btn">预约线下体验</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>SWISS GOLD</h4>
+                    <p style="color: #666; font-size: 0.9rem; line-height: 1.8;">
+                        致力于为全球收藏家提供最纯正的瑞士制表工艺与奢华金饰。每一款产品都是时间与艺术的结晶。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#">新品发布</a></li>
+                        <li><a href="#">经典系列</a></li>
+                        <li><a href="#">限时折扣</a></li>
+                        <li><a href="#">品牌故事</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>客户服务</h4>
+                    <ul>
+                        <li><a href="#">订单查询</a></li>
+                        <li><a href="#">售后维修</a></li>
+                        <li><a href="#">保养周期</a></li>
+                        <li><a href="#">联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <ul>
+                        <li><a href="#">微信公众号</a></li>
+                        <li><a href="#">新浪微博</a></li>
+                        <li><a href="#">小红书</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Swiss Gold Luxury Timepiece. All Rights Reserved. 隐私政策 | 服务条款</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
