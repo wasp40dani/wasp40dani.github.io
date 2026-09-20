@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="小宝QQ机器人官网，提供智能QQ机器人搭建教程、功能介绍、命令手册及在线交流。小宝机器人支持私聊自动回复、群管理、娱乐互动，是QQ群管理与个人号辅助的必备工具。">
+    <meta name="keywords" content="小宝qq机器人,QQ机器人,QQ群管理,QQ机器人搭建,小宝机器人">
+    <title>小宝qq机器人 - 智能QQ群管理与辅助工具平台</title>
+    <style>
+        :root {
+            --primary-color: #007bff;
+            --primary-hover: #0056b3;
+            --secondary-color: #6c757d;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-sub: #666666;
+            --border-color: #e9ecef;
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.07);
+            --radius: 8px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-sub);
+            margin-bottom: 40px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .cta-btn {
+            background-color: var(--primary-color);
+            color: white !important;
+            padding: 8px 20px;
+            border-radius: var(--radius);
+            font-weight: 500;
+        }
+
+        .cta-btn:hover {
+            background-color: var(--primary-hover);
+            color: white !important;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f0f4ff 0%, #ffffff 100%);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--text-main);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-sub);
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: var(--radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: white;
+            color: var(--primary-color);
+        }
+
+        .btn-outline {
+            background-color: white;
+            color: var(--text-main);
+            border: 2px solid var(--border-color);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(0, 123, 255, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .feature-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.25rem;
+        }
+
+        .feature-card p {
+            color: var(--text-sub);
+            font-size: 0.95rem;
+        }
+
+        /* Tutorial / Steps */
+        .tutorial-section {
+            background-color: var(--card-bg);
+        }
+
+        .steps-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .step-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            background: #fafbfc;
+        }
+
+        .step-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: rgba(0, 123, 255, 0.2);
+            line-height: 1;
+            min-width: 50px;
+        }
+
+        .step-content h4 {
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .step-content p {
+            color: var(--text-sub);
+            font-size: 0.95rem;
+        }
+
+        .code-block {
+            background-color: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: var(--radius);
+            font-family: monospace;
+            font-size: 0.9rem;
+            margin-top: 10px;
+            overflow-x: auto;
+        }
+
+        /* Commands List */
+        .commands-section {
+            background-color: #f1f3f5;
+        }
+
+        .cmd-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .cmd-table th, .cmd-table td {
+            padding: 15px 20px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .cmd-table th {
+            background-color: #f8f9fa;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .cmd-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .cmd-table tr:hover {
+            background-color: #fafbfc;
+        }
+
+        .cmd-tag {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .tag-admin { background-color: #e3f2fd; color: #1976d2; }
+        .tag-fun { background-color: #fff3e0; color: #f57c00; }
+        .tag-tool { background-color: #e8f5e9; color: #388e3c; }
+
+        /* FAQ Section */
+        .faq-section {
+            background-color: var(--card-bg);
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+            padding: 20px 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .faq-answer {
+            margin-top: 15px;
+            color: var(--text-sub);
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        /* Footer */
+        footer {
+            background-color: #212529;
+            color: #adb5bd;
+            padding: 50px 0 20px;
+            margin-top: auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #343a40;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .step-item {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                <span>小宝</span>机器人
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#features">功能特性</a></li>
+                    <li><a href="#tutorial">搭建教程</a></li>
+                    <li><a href="#commands">命令手册</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="cta-btn">立即体验</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>让 QQ 群更智能，让管理更轻松</h1>
+                <p>小宝QQ机器人是一款开源、轻量且功能强大的QQ群辅助工具。支持自动回复、敏感词过滤、群规管理、娱乐互动等多种功能，为您的QQ群提供全天候的自动化服务。</p>
+                <div class="hero-buttons">
+                    <a href="#tutorial" class="btn btn-primary">查看搭建教程</a>
+                    <a href="#commands" class="btn btn-outline">浏览命令手册</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="section">
+            <div class="container">
+                <h2 class="section-title">核心功能</h2>
+                <p class="section-subtitle">全方位的QQ群管理解决方案，满足不同场景需求</p>
+                
+                <div class="features-grid">
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                        </div>
+                        <h3>智能自动回复</h3>
+                        <p>支持私聊和群聊自动回复，可配置关键词触发规则，设置多级回复内容，像真人一样与用户互动。</p>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                        </div>
+                        <h3>群规与风控</h3>
+                        <p>内置敏感词过滤系统，自动清理广告、违禁词。支持自定义群规，违规自动踢出或禁言，维护群内秩序。</p>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        </div>
+                        <h3>娱乐互动系统</h3>
+                        <p>内置猜拳、骰子、点歌、天气预报等娱乐功能，活跃群气氛，让群成员互动更有趣。</p>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                        </div>
+                        <h3>数据统计报表</h3>
+                        <p>提供每日、每周群成员活跃度统计，生成可视化图表，帮助群主了解群组动态，优化管理策略。</p>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                        </div>
+                        <h3>多协议支持</h3>
+                        <p>支持Android协议与iOS协议，兼容各种QQ登录方式，稳定性高，断线自动重连。</p>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                        </div>
+                        <h3>高度可配置</h3>
+                        <p>插件化架构，支持自定义开发插件。所有功能均可通过配置文件进行灵活调整，满足个性化需求。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tutorial Section -->
+        <section id="tutorial" class="section tutorial-section">
+            <div class="container">
+                <h2 class="section-title">快速搭建指南</h2>
+                <p class="section-subtitle">无需编程基础，三步即可在本地运行小宝机器人</p>
+
+                <div class="steps-container">
+                    <div class="step-item">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>下载并解压程序</h4>
+                            <p>从官网下载最新版的小宝机器人压缩包，解压到任意本地文件夹（如 D:\Xiaobao）。</p>
+                            <div class="code-block">路径示例：D:\Xiaobao\bot.exe</div>
+                        </div>
+                    </div>
+
+                    <div class="step-item">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>配置运行参数</h4>
+                            <p>双击运行程序，首次启动会自动创建配置文件。在配置文件中填入您的QQ账号、密码及登录协议类型。</p>
+                            <div class="code-block">account: 123456789
+password: ********
+protocol: android</div>
+                        </div>
+                    </div>
+
+                    <div class="step-item">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>添加好友与进群</h4>
+                            <p>机器人启动后，请使用手机QQ扫描界面显示的二维码进行登录验证。登录成功后，手动添加好友或申请加入目标QQ群。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Commands Section -->
+        <section id="commands" class="section commands-section">
+            <div class="container">
+                <h2 class="section-title">常用命令手册</h2>
+                <p class="section-subtitle">掌握这些指令，高效管理您的QQ群</p>
+
+                <table class="cmd-table">
+                    <thead>
+                        <tr>
+                            <th>命令</th>
+                            <th>说明</th>
+                            <th>类型</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>/ban [QQ号] [时间]</code></td>
+                            <td>禁言指定用户，时间单位为分钟</td>
+                            <td><span class="cmd-tag tag-admin">管理</span></td>
+                        </tr>
+                        <tr>
+                            <td><code>/kick [QQ号]</code></td>
+                            <td>移除指定用户出群</td>
+                            <td><span class="cmd-tag tag-admin">管理</span></td>
+                        </tr>
+                        <tr>
+                            <td><code>/weather [城市名]</code></td>
+                            <td>查询指定城市的实时天气</td>
+                            <td><span class="cmd-tag tag-fun">娱乐</span></td>
+                        </tr>
+                        <tr>
+                            <td><code>/dice [次数]</code></td>
+                            <td>掷骰子，可自定义投掷次数</td>
+                            <td><span class="cmd-tag tag-fun">娱乐</span></td>
+                        </tr>
+                        <tr>
+                            <td><code>/mute [开启/关闭]</code></td>
+                            <td>开启或关闭群内的自动禁言功能</td>
+                            <td><span class="cmd-tag tag-tool">工具</span></td>
+                        </tr>
+                        <tr>
+                            <td><code>/help</code></td>
+                            <td>查看所有可用命令列表</td>
+                            <td><span class="cmd-tag tag-tool">工具</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="section faq-section">
+            <div class="container">
+                <h2 class="section-title">常见问题</h2>
+                <p class="section-subtitle">关于小宝QQ机器人的使用疑问解答</p>
+
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-question">机器人长时间不操作会掉线吗？</div>
+                        <div class="faq-answer">小宝机器人采用心跳保活机制，只要电脑未关机且网络正常，机器人会保持在线状态。建议在运行机器人的电脑上保持最小化运行。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">支持多开吗？</div>
+                        <div class="faq-answer">支持。您可以同时运行多个机器人实例，分别登录不同的QQ账号，实现多群管理。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">修改配置文件后需要重启吗？</div>
+                        <div class="faq-answer">部分配置（如回复内容、敏感词）修改后无需重启，机器人会实时读取。但涉及协议类型或端口的修改，通常需要重启程序生效。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">如何更新到最新版本？</div>
+                        <div class="faq-answer">请访问官网下载最新安装包，直接覆盖旧版本即可。建议在更新前备份好您的配置文件。</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>小宝机器人</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.6;">致力于为QQ用户提供最稳定、最便捷的群管理辅助工具，让沟通更高效。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#features">功能介绍</a></li>
+                        <li><a href="#tutorial">搭建教程</a></li>
+                        <li><a href="#commands">命令手册</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>支持与反馈</h4>
+                    <ul>
+                        <li><a href="#">问题反馈</a></li>
+                        <li><a href="#">使用文档</a></li>
+                        <li><a href="#">加入交流群</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 小宝机器人. All rights reserved. 本网站为技术交流与资源展示平台。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <script>
+        // 简单的FAQ折叠逻辑
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // 关闭其他已打开的项
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // 切换当前项
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+  </html>
