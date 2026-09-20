@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>熏衣草-自然植物与芳香疗愈指南</title>
+    <meta name="description" content="本站提供关于熏衣草的全方位指南，包括品种介绍、种植养护技巧、精油提取与应用、芳香疗法功效及选购指南。探索紫色的治愈力量，了解如何将薰衣草融入日常生活。">
+    <meta name="keywords" content="熏衣草, 薰衣草, 薰衣草种植, 薰衣草精油, 芳香疗法, 薰衣草功效, 薰衣草茶">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #6a5acd;
+            --secondary-color: #9370db;
+            --accent-color: #e6e6fa;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --bg-light: #f9f9f9;
+            --white: #ffffff;
+            --spacing-unit: 1rem;
+            --border-radius: 8px;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            font-weight: 500;
+            color: var(--text-dark);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--white);
+            color: var(--primary-color);
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Main Content Layout */
+        .main-layout {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+
+        /* Section Styling */
+        section {
+            margin-bottom: 3rem;
+        }
+
+        .section-header {
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        /* Featured Card Grid */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-img {
+            height: 180px;
+            width: 100%;
+            background-color: #ddd;
+        }
+
+        .card-body {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .card-text {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            flex: 1;
+        }
+
+        .card-link {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* Sidebar */
+        .sidebar-widget {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+        }
+
+        .widget-title {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent-color);
+        }
+
+        .plant-list li {
+            margin-bottom: 0.8rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .plant-list li:last-child {
+            border-bottom: none;
+        }
+
+        .plant-list a {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-dark);
+        }
+
+        .plant-list span {
+            font-size: 0.8rem;
+            background: var(--accent-color);
+            color: var(--primary-color);
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        /* FAQ Section */
+        .faq-item {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1rem 1.5rem;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--white);
+            transition: background-color 0.2s;
+        }
+
+        .faq-question:hover {
+            background-color: var(--accent-color);
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+            color: var(--text-light);
+            background-color: #fafafa;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 1rem 1.5rem 1.5rem;
+            max-height: 200px;
+        }
+
+        .faq-icon {
+            font-size: 1.2rem;
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 3rem 0;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-col a {
+            color: #bdc3c7;
+            transition: color 0.2s;
+        }
+
+        .footer-col a:hover {
+            color: var(--white);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #95a5a6;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 1rem 0;
+                gap: 1rem;
+            }
+
+            .nav-menu {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .main-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-inner">
+        <div class="logo">
+            <span>🌿</span> 熏衣草百科
+        </div>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="#种植指南">种植指南</a></li>
+                <li><a href="#精油应用">精油应用</a></li>
+                <li><a href="#品种介绍">品种介绍</a></li>
+                <li><a href="#常见问题">常见问题</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="container">
+        <h1>紫色治愈力量</h1>
+        <p>探索熏衣草的奥秘，从庭院种植到芳香疗法，获取专业的养护知识与使用指南。</p>
+        <a href="#种植指南" class="cta-button">开始探索</a>
+    </div>
+</section>
+
+<main class="container main-layout">
+    <div class="content-area">
+        
+        <!-- 种植指南 Section -->
+        <section id="种植指南">
+            <div class="section-header">
+                <h2 class="section-title">庭院种植指南</h2>
+            </div>
+            <article class="card-grid">
+                <article class="card">
+                    <img src="https://picsum.photos/seed/lavender1/400/250" alt="薰衣草种植盆栽" class="card-img">
+                    <div class="card-body">
+                        <h3 class="card-title">光照与土壤要求</h3>
+                        <p class="card-text">薰衣草喜光，需要充足的日照才能保证香气浓郁。土壤需排水良好，建议使用沙质土壤，pH值在6.5-7.5之间。</p>
+                        <a href="#" class="card-link">阅读全文 →</a>
+                    </div>
+                </article>
+                <article class="card">
+                    <img src="https://picsum.photos/seed/lavender2/400/250" alt="薰衣草浇水技巧" class="card-img">
+                    <div class="card-body">
+                        <h3 class="card-title">浇水与修剪技巧</h3>
+                        <p class="card-text">避免积水是关键。生长季保持湿润，冬季休眠期减少浇水。定期修剪枯枝可促进分枝，延长植株寿命。</p>
+                        <a href="#" class="card-link">阅读全文 →</a>
+                    </div>
+                </article>
+                <article class="card">
+                    <img src="https://picsum.photos/seed/lavender3/400/250" alt="薰衣草病虫害防治" class="card-img">
+                    <div class="card-body">
+                        <h3 class="card-title">病虫害防治</h3>
+                        <p class="card-text">常见的病害有根腐病，虫害包括红蜘蛛。保持通风良好并避免叶片过湿是预防措施。</p>
+                        <a href="#" class="card-link">阅读全文 →</a>
+                    </div>
+                </article>
+            </article>
+        </section>
+
+        <!-- 精油应用 Section -->
+        <section id="精油应用">
+            <div class="section-header">
+                <h2 class="section-title">芳香疗法与精油</h2>
+            </div>
+            <div class="card-grid">
+                <article class="card">
+                    <img src="https://picsum.photos/seed/lavenderoil/400/250" alt="薰衣草精油瓶" class="card-img">
+                    <div class="card-body">
+                        <h3 class="card-title">助眠安神</h3>
+                        <p class="card-text">将1-2滴薰衣草精油滴在枕边或扩香石上，有助于缓解焦虑，提升睡眠质量。</p>
+                        <a href="#" class="card-link">了解用法 →</a>
+                    </div>
+                </article>
+                <article class="card">
+                    <img src="https://picsum.photos/seed/lavenderbath/400/250" alt="薰衣草泡澡" class="card-img">
+                    <div class="card-body">
+                        <h3 class="card-title">舒缓肌肤</h3>
+                        <p class="card-text">薰衣草精油具有抗炎和抗菌特性，可用于处理轻微烧伤、蚊虫叮咬及皮肤刺激。</p>
+                        <a href="#" class="card-link">了解用法 →</a>
+                    </div>
+                </article>
+                <article class="card">
+                    <img src="https://picsum.photos/seed/lavendertea/400/250" alt="薰衣草茶" class="card-img">
+                    <div class="card-body">
+                        <h3 class="card-title">薰衣草茶饮</h3>
+                        <p class="card-text">干燥的薰衣草花蕾可泡茶，具有放松神经、缓解头痛的功效，适合下午茶饮用。</p>
+                        <a href="#" class="card-link">了解用法 →</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 常见问题 FAQ -->
+        <section id="常见问题">
+            <div class="section-header">
+                <h2 class="section-title">常见问题解答</h2>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>薰衣草一年开几次花？</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>大多数薰衣草品种在春末夏初（5月至7月）开花一次。如果气候适宜且修剪得当，部分品种在秋季（9月至10月）可能会迎来第二次小规模开花。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>室内可以种植薰衣草吗？</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>可以，但需注意选择耐阴性较好的品种（如英国薰衣草 Lavandula angustifolia），并确保有充足的阳光照射，最好放在南向阳台。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>薰衣草有毒吗？</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>薰衣草植物本身对人和宠物通常是无毒的，其精油也常用于儿童护理。但过量摄入或接触高浓度精油可能会引起皮肤过敏或轻微不适。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <aside class="sidebar">
+        <!-- 品种介绍 Widget -->
+        <div class="sidebar-widget">
+            <h3 class="widget-title">常见品种</h3>
+            <ul class="plant-list">
+                <li><a href="#"><span>英国薰衣草</span> <span>耐寒</span></a></li>
+                <li><a href="#"><span>法国薰衣草</span> <span>花穗长</span></a></li>
+                <li><a href="#"><span>齿叶薰衣草</span> <span>耐热</span></a></li>
+                <li><a href="#"><span>齐派薰衣草</span> <span>蓝紫色</span></a></li>
+                <li><a href="#"><span>西班牙薰衣草</span> <span>观赏性</span></a></li>
+            </ul>
+        </div>
+
+        <!-- 选购建议 Widget -->
+        <div class="sidebar-widget">
+            <h3 class="widget-title">选购指南</h3>
+            <p style="font-size: 0.9rem; color: #666; margin-bottom: 10px;">
+                购买时请观察叶片是否翠绿，花苞是否饱满。避免购买叶片发黄或根部腐烂的植株。
+            </p>
+            <a href="#" class="cta-button" style="font-size: 0.8rem; padding: 0.5rem 1rem; text-align: center;">查看更多建议</a>
+        </div>
+    </aside>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>关于我们</h4>
+                <p style="font-size: 0.9rem; color: #bdc3c7;">
+                    致力于推广薰衣草文化，提供专业的种植与生活应用指南，让更多人感受自然之美。
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>快速链接</h4>
+                <ul>
+                    <li><a href="#种植指南">种植指南</a></li>
+                    <li><a href="#精油应用">精油应用</a></li>
+                    <li><a href="#常见问题">常见问题</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>关注我们</h4>
+                <ul>
+                    <li><a href="#">微信公众号</a></li>
+                    <li><a href="#">微博</a></li>
+                    <li><a href="#">小红书</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2023 熏衣草百科网 版权所有
+        </div>
+    </div>
+</footer>
+
+<script>
+    // FAQ Accordion Logic
+    document.addEventListener('DOMContentLoaded', function() {
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                // Close other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                // Toggle current item
+                item.classList.toggle('active');
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
